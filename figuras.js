@@ -44,3 +44,51 @@ function areaCirculo(radioCirculo) {
 }
 
 console.groupEnd();
+
+
+// utils
+
+function calcularPerimetroCuadrado() {
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+
+}
+
+function calcularAreaCuadrado() {
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const area = areaCuadrado(value);
+    alert(area);
+}
+
+
+
+
+function calcularPerimetroTriangulo() {
+    const input1 = document.getElementById("inputTriangulo1");
+    const input2 = document.getElementById("inputTriangulo2");
+    const input3 = document.getElementById("inputTriangulo3");
+
+    const value1 = input1.value;
+    const value2 = input2.value;
+    const value3 = input3.value;
+
+    const perimetro = perimetroTriangulo(value1, value2, value3);
+    alert(perimetro);
+
+}
+
+function calcularAreaTriangulo() {
+    const inputAlturaTriangulo = document.getElementById("inputAlturaTriangulo");
+    const inputBaseTriangulo = document.getElementById("inputBaseTriangulo");
+
+    const alturaTriangulo = inputAlturaTriangulo.value;
+    const baseTriangulo = inputBaseTriangulo.value;
+
+
+    const area = areaTriangulo(baseTriangulo, alturaTriangulo);
+    alert(area);
+}
+
