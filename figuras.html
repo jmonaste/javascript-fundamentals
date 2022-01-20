@@ -17,8 +17,12 @@
     <section>
         <h2>Calcula área y perímetro de un cuadrado</h2>
         <form>
-            <label for="inputCuadrado">Introduce el lado del cuadrado:</label>
-            <input id="inputCuadrado" type="number"/>
+
+            <div>
+                <label for="inputCuadrado">Introduce el lado del cuadrado:</label>
+                <input id="inputCuadrado" type="number"/>
+            </div>
+
             <button type="button" onclick="calcularPerimetroCuadrado()">Calcular perímetro</button>
             <button type="button" onclick="calcularAreaCuadrado()">Calcular área</button>
         </form>
@@ -29,17 +33,28 @@
     <section>
         <h2>Calcula área y perímetro de un triángulo</h2>
         <form>
-            <label for="inputTriangulo1">Introduce el lado 1 del triángulo:</label>
-            <input id="inputTriangulo1" type="number"/>
 
-            <label for="inputTriangulo2">Introduce el lado 2 del triángulo:</label>
-            <input id="inputTriangulo2" type="number"/>
+            <div>
+                <label for="inputTriangulo1">Introduce el lado 1 del triángulo:</label>
+                <input id="inputTriangulo1" type="number"/>
+            </div>
 
-            <label for="inputBaseTriangulo">Introduce la base del triángulo:</label>
-            <input id="inputBaseTriangulo" type="number"/>
+            <div>
+                <label for="inputTriangulo2">Introduce el lado 2 del triángulo:</label>
+                <input id="inputTriangulo2" type="number"/>
+            </div>
+            
+            <div>
+                <label for="inputBaseTriangulo">Introduce la base del triángulo:</label>
+                <input id="inputBaseTriangulo" type="number"/>
+            </div>
 
-            <label for="inputAlturaTriangulo">Introduce la altura del triángulo:</label>
-            <input id="inputAlturaTriangulo" type="number"/>
+            <div>
+                <label for="inputAlturaTriangulo">Introduce la altura del triángulo:</label>
+                <input id="inputAlturaTriangulo" type="number"/>
+            </div>
+
+            
 
             <button type="button" onclick="calcularPerimetroTriangulo()">Calcular perímetro</button>
             <button type="button" onclick="calcularAreaTriangulo()">Calcular área</button>
@@ -49,12 +64,17 @@
 
     <!-- Sección del círculo -->
     <section>
-        <h2>Calcula área y perímetro de un círculo</h2>
+        <h2>Calcula diámetro, perímetro y área de un círculo</h2>
         <form>
-            <label for="inputCuadrado">Introduce el lado del cuadrado:</label>
-            <input id="inputCuadrado" type="number"/>
-            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular perímetro</button>
-            <button type="button" onclick="calcularAreaCuadrado()">Calcular área</button>
+
+            <div>
+                <label for="inputCirculo">Introduce el radio del círculo:</label>
+                <input id="inputCirculo" type="number"/>
+            </div>
+
+            <button type="button" onclick="calcularDiametroCirculo()">Calcular diámetro</button>
+            <button type="button" onclick="calcularPerimetroCirculo()">Calcular perímetro</button>
+            <button type="button" onclick="calcularAreaCirculo()">Calcular área</button>
         </form>
     </section>
 
