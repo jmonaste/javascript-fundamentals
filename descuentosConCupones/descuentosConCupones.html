@@ -96,7 +96,7 @@
             </div>
             <div class="grouptext">
                <h3>PRICE</h3>
-               <p>50$</p>
+               <p id="groupTextPrice">50$</p>
             </div>
             
             
@@ -117,49 +117,46 @@
             <div class="feature">
               
               <div class="featureText">
-                <p> <strong>.</strong></p>
                 <p>Importe producto</p>
               </div>
 
               <div class="featureIcon">
-                <input type="number"/>
+                <input id="InputPrice" type="number"/>
             </div>
 
             </div>
             <div class="feature">
               
                <div class="featureText">
-                <p> <strong>.</strong></p>
                 <p>Descuento a aplicar</p>
               </div>
 
               <div class="featureIcon">
-                <input type="number"/>
+                <input id="InputDiscount" type="number"/>
             </div>
 
              </div>
             <div class="feature">
 
                <div class="featureText">
-                <p> <strong>.</strong></p>
                 <p>Cupón adicional</p>
               </div>
 
-              <div id="cuponSelector" class="featureIcon">
-                <select type="number">
-                  <option value="volvo">No tengo cupón</option>
-                  <option value="saab">Cupón navidad 50%</option>
-                  <option value="mercedes">Cupón san valentín 30%</option>
+              <div class="featureIcon">
+                <select id="cuponSelector" type="number">
+                  <option value="0">No tengo cupón</option>
+                  <option value="1">Cupón navidad 50%</option>
+                  <option value="2">Cupón san valentín 30%</option>
                 </select>
             </div>
               </div>
           </div>
           
           <div class="checkoutButton">
-            <div class="priceTag">
+            <div id="resultPrice" class="priceTag">
               <span>$</span>50
             </div>
-            <button class="preorder">
+            <button class="preorder" onclick="onClickButtonPriceDiscount()"> 
               <p>Calcular</p>
               <div class="buttonaction">
                <svg
