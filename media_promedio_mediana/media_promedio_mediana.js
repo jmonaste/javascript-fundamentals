@@ -1,160 +1,59 @@
+/**
+ * Promedio
+ */
 
-// Código del cuadrado
-console.group("Cuadrado");
+const lista1 = [100, 200, 300, 400, 500, 400000000];
 
-function  perimetroCuadrado(lado) {
-    return lado * 4;
-} 
 
-function areaCuadrado(lado) {
-    return lado * lado;
+
+
+//Calcula la media arimética de una lista
+function calcularMediaAritmetica(lista) {
+    // let sumaLista = 0;
+
+    // //Sumamos todos los elementos del array
+    // for (let index = 0; index < lista.length; index++) {
+    //     sumaLista = sumaLista + lista[index];
+    // }
+    const sumaLista = lista.reduce(
+        function (valorAcumulado = 0, nuevoElemento){
+            return valorAcumulado + nuevoElemento;
+
+        }
+    );
+
+    const promedioLista = sumaLista / lista.length;
+    return promedioLista;
 }
 
-console.groupEnd();
-
-
-// Código del triángulo
-console.group("Triángulo");
-
-function perimetroTriangulo(ladoTriangulo1, ladoTriangulo2, baseTriangulo) {
-    return ladoTriangulo1 + ladoTriangulo2 + baseTriangulo
+//Calcula si el valor pasado como parámetro es par
+//Devuelve true si es par
+//Devuelve false si es impar, cero o un número negativo
+function esPar(num) {
+    return (num % 2) == 0;
 }
 
-function areaTriangulo(baseTriangulo, alturaTriangulo) {
-    return (baseTriangulo * alturaTriangulo) / 2;
+//Calcula la mediana de una lista
+function calcularMediana(lista) {
+    const esNumPar = esPar(lista.length);
+    let mediana = 0;
+
+    if(esNumPar){
+        //la longitud de la lista es par, por lo que deberíamos devovler la media de los dos elementos centales
+        mediana = calcularMediaAritmetica([lista[(lista.length / 2) - 1], lista[(lista.length / 2)]]);
+    }
+    else{
+        //la longitud de la lista es impar, por lo que podemos devolver el elemento central de la lista
+        let index = ((lista.length - 1) / 2) + 1;
+        mediana = lista[index];
+    }
+
+    return mediana;
 }
 
-console.groupEnd();
-
-
-// Código del círculo
-console.group("Círculo");
-
-function diametroCirculo(radio) {
-    return radio * 2;
+//Calcular la moda. el valor que más se repite
+function calcularModa(lista) {
+    //lo primero que vamos a hacer será ordenar la lista
+    lista = lista.sort();
+    console.log(lista)
 }
-
-function perimetroCirculo(radio) {
-    const diametro = diametroCirculo(radio);
-    return diametro * Math.PI;
-}
-
-function areaCirculo(radioCirculo) {
-    return (radioCirculo * radioCirculo) * Math.PI;
-}
-
-console.groupEnd();
-
-//Código del triángulo isósceles
-
-//En geometría, un triángulo isósceles es un tipo de triángulo que tiene, al menos, dos lados de igual longitud. 
-//Al ángulo formado por los lados de igual longitud se le denomina ángulo en el vértice y al lado opuesto a él, 
-//ángulo base.1
-
-//por lo que deberíamos pedir sólo dos datos. Un lado y la base
-
-console.group("Triángulo isósceles");
-
-function alturaIsosceles(ladoIsosceles, baseIsosceles) {
-    /*la altura es la raiz cuadrada de 4 veces el lado al cuadrado - base al cuadrado
-    todo ello dividido entre 2*/
-    return ((Math.sqrt((4*ladoIsosceles*ladoIsosceles)-(baseIsosceles*baseIsosceles))) / (2))
-}
-
-console.groupEnd();
-
-
-
-
-
-
-// utils
-
-
-//Cuadrado
-function calcularPerimetroCuadrado() {
-    const input = document.getElementById("inputCuadrado");
-    const value = input.value;
-    const perimetro = perimetroCuadrado(value);
-    alert(perimetro);
-
-}
-
-function calcularAreaCuadrado() {
-    const input = document.getElementById("inputCuadrado");
-    const value = input.value;
-    const area = areaCuadrado(value);
-    alert(area);
-}
-
-
-
-//Triangulo
-function calcularPerimetroTriangulo() {
-    const input1 = document.getElementById("inputTriangulo1");
-    const input2 = document.getElementById("inputTriangulo2");
-    const input3 = document.getElementById("inputBaseTriangulo");
-
-    const value1 = input1.value;
-    const value2 = input2.value;
-    const value3 = input3.value;
-
-    const perimetro = perimetroTriangulo(value1, value2, value3);
-    alert(perimetro);
-
-}
-
-function calcularAreaTriangulo() {
-    const inputAlturaTriangulo = document.getElementById("inputAlturaTriangulo");
-    const inputBaseTriangulo = document.getElementById("inputBaseTriangulo");
-
-    const alturaTriangulo = inputAlturaTriangulo.value;
-    const baseTriangulo = inputBaseTriangulo.value;
-
-
-    const area = areaTriangulo(baseTriangulo, alturaTriangulo);
-    alert(area);
-}
-
-//Circulo
-
-function calcularDiametroCirculo() {
-    const inputRadioCirculo = document.getElementById("inputCirculo");
-    const radioValue = inputRadioCirculo.value;
-    const diametro = radioValue * 2;
-    alert(diametro);
-}
-
-function calcularPerimetroCirculo(radio) {
-    const inputRadioCirculo = document.getElementById("inputCirculo");
-    const radioValue = inputRadioCirculo.value;
-    const perimetro = perimetroCirculo(radioValue);
-    alert(perimetro);
-}
-
-function calcularAreaCirculo(radio) {
-    const inputRadioCirculo = document.getElementById("inputCirculo");
-    const radioValue = inputRadioCirculo.value;
-    const area = areaCirculo(radioValue);
-    alert(area);
-}
-
-console.group("Círculo");
-
-
-//Isósceles
-
-console.group("Isósceles");
-
-function calcularAlturaIsosceles() {
-    const inputLadoIsosceles = document.getElementById("inputLadoIsosceles");
-    const inputBaseIsosceles = document.getElementById("inputBaseIsosceles");
-
-    const ladoIsosceles = inputLadoIsosceles.value;
-    const baseIsosceles = inputBaseIsosceles.value;
-
-    const altura = alturaIsosceles(ladoIsosceles, baseIsosceles);
-    alert(altura);
-} 
-
-console.groupEnd();
