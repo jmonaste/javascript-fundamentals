@@ -53,7 +53,10 @@ function calcularMediana(lista) {
 
 //Calcular la moda. el valor que más se repite
 function calcularModa(lista) {
+    console.log('Entrando en la función para calcular la moda');
+
     //lo primero que vamos a hacer será ordenar la lista
+    console.log('Ordenando la lista...')
     lista = lista.sort();
     console.log(lista)
 
@@ -64,11 +67,13 @@ function calcularModa(lista) {
     //los contadores tienen que guardar información el número de ocurrencias y además del elemento que están contando
     //por lo que tienen que ser un array de dos elementos, la cuenta y el número
 
-    let firstOccurenceCounter = 0;
-    let secondOccurenceCounter = 0;
+    console.log('Inicializando los contadores y variables...');
+    let firstOccurenceCounter = [0,null];
+    let secondOccurenceCounter = [0,null];
 
     let hasSwitched = false;
 
+    console.log('Preparando para recorrer la lista...');
     //recorremos la lista
     for (let index = 0; index < lista.length; index++) {
         //tenemos que detectar el cambio de valor entre las ocurrencias
@@ -76,25 +81,34 @@ function calcularModa(lista) {
         //cuando haya un cambio de ocurrencia, inicializaremos a cero el contador más pequeño y será ese el que utilizaremos
         //ya que el otro estaría guardando la moda
 
-        if(index = 0) {
+        if(index == 0) {
+            console.log('Entramos en este bucle único para aumentar la primera variable');
             //estamos en el primer ciclo del bucle, sumamos un 1 al primer contador para inicializar
-            firstOccurenceCounter++;
+            firstOccurenceCounter[firstOccurenceCounter[0]+1, lista[index]];
         }
         else{
+            console.log('Entrando al bucle normal, index = ' + index);
             //el resto de ciclos del bucle se ejecutarán aquí
 
             //comparamos el elemento actual con al enterior, para saber si tenemos que sumar una ocurrencia 
             //o inicializar uno de los dos contadores
+            console.log('evaluando si hay un nuevo elemento...');
             if(lista[index] == lista[index - 1]) {
+                console.log('Misma ocurrencia, sumamos uno al contador');
                 //misma ocurrencia, hay que sumar al contador
-                firstOccurenceCounter++;
+                firstOccurenceCounter = [firstOccurenceCounter[0]+1, lista[index]];
             }
             else {
                 //tenemos que hacer switch de los contadores y seguir contando
                 //para hacer switch, 
+                console.log('Nueva ocurrencia. switch a true y sumamos 1 al otro contador');
+                
                 hasSwitched = true;
 
-                secondOccurenceCounter++;
+                secondOccurenceCounter = [secondOccurenceCounter[0]+1, lista[index]];
+
+                console.log('hasSwitched: ' + hasSwitched);
+                console.log('el estado del contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
             }
         }
 
@@ -104,13 +118,27 @@ function calcularModa(lista) {
 
             //tenemos que ver cuál de los dos contadores es el mayor. Si el mayor es el primero. dejamos 
             //como estaba. si no, intercambiamos (si el segundo es mayor o igual)
-            if(secondOccurenceCounter >= firstOccurenceCounter) {
-                firstOccurenceCounter = secondOccurenceCounter;
-                secondOccurenceCounter = 0;
+            if(secondOccurenceCounter[0] >= firstOccurenceCounter[0]) {
+                firstOccurenceCounter[0] = secondOccurenceCounter[0];
+                secondOccurenceCounter[0] = 0;
             }
 
             //reiniciamos el flag
             hasSwitched = false;
         }
     }
+
+    //ya hemos recorrido la lista
+    //ahora tenemos que ver cual de los dos contadores es el mayor, y devolver su valor
+    if(firstOccurenceCounter[0] >= secondOccurenceCounter[0]) {
+        console.log('La moda de la lista es: ' + firstOccurenceCounter[1]);
+        //return firstOccurenceCounter[1];
+    }
+    else {
+        console.log('La moda de la lista es: ' + secondOccurenceCounter[1]);
+        //return secondOccurenceCounter[1];
+    }
+
+    console.log('La moda de la lista es: ' + firstOccurenceCounter[1]);
+    console.log('La moda de la lista es: ' + secondOccurenceCounter[1]);
 }
