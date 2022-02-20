@@ -52,7 +52,7 @@ function calcularMediana(lista) {
 }
 
 //Calcular la moda. el valor que más se repite
-function calcularModa(lista) {
+function calcularModaOld(lista) {
     console.log('Entrando en la función para calcular la moda');
 
     //lo primero que vamos a hacer será ordenar la lista
@@ -81,10 +81,15 @@ function calcularModa(lista) {
         //cuando haya un cambio de ocurrencia, inicializaremos a cero el contador más pequeño y será ese el que utilizaremos
         //ya que el otro estaría guardando la moda
 
+        console.log('ESTAMOS EVALUANDO EL VALOR ' + lista[index]);
+
         if(index == 0) {
             console.log('Entramos en este bucle único para aumentar la primera variable');
             //estamos en el primer ciclo del bucle, sumamos un 1 al primer contador para inicializar
-            firstOccurenceCounter[firstOccurenceCounter[0]+1, lista[index]];
+            firstOccurenceCounter = [firstOccurenceCounter[0]+1, lista[index]];
+
+            console.log('el estado del primer contador es: ' + firstOccurenceCounter[0] + ' para el valor ' + firstOccurenceCounter[1]);
+            console.log('el estado del segundo contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
         }
         else{
             console.log('Entrando al bucle normal, index = ' + index);
@@ -92,11 +97,14 @@ function calcularModa(lista) {
 
             //comparamos el elemento actual con al enterior, para saber si tenemos que sumar una ocurrencia 
             //o inicializar uno de los dos contadores
-            console.log('evaluando si hay un nuevo elemento...');
+            console.log('Estamos revisnado un nuevo elemento??');
             if(lista[index] == lista[index - 1]) {
-                console.log('Misma ocurrencia, sumamos uno al contador');
+                console.log('Misma ocurrencia, sumamos uno al primer contador');
                 //misma ocurrencia, hay que sumar al contador
                 firstOccurenceCounter = [firstOccurenceCounter[0]+1, lista[index]];
+
+                console.log('el estado del primer contador es: ' + firstOccurenceCounter[0] + ' para el valor ' + firstOccurenceCounter[1]);
+                console.log('el estado del segundo contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
             }
             else {
                 //tenemos que hacer switch de los contadores y seguir contando
@@ -108,7 +116,9 @@ function calcularModa(lista) {
                 secondOccurenceCounter = [secondOccurenceCounter[0]+1, lista[index]];
 
                 console.log('hasSwitched: ' + hasSwitched);
-                console.log('el estado del contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
+                
+                console.log('el estado del primer contador es: ' + firstOccurenceCounter[0] + ' para el valor ' + firstOccurenceCounter[1]);
+                console.log('el estado del segundo contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
             }
         }
 
@@ -119,8 +129,15 @@ function calcularModa(lista) {
             //tenemos que ver cuál de los dos contadores es el mayor. Si el mayor es el primero. dejamos 
             //como estaba. si no, intercambiamos (si el segundo es mayor o igual)
             if(secondOccurenceCounter[0] >= firstOccurenceCounter[0]) {
-                firstOccurenceCounter[0] = secondOccurenceCounter[0];
-                secondOccurenceCounter[0] = 0;
+                //intercambio de contadores=
+                console.log('Ha habido switch, se van a int3ercambiar los ocntadores');
+
+                firstOccurenceCounter = secondOccurenceCounter;
+                secondOccurenceCounter = [0, null];
+
+                console.log('Se han intercambiado los contadores');
+                console.log('el estado del primer contador es: ' + firstOccurenceCounter[0] + ' para el valor ' + firstOccurenceCounter[1]);
+                console.log('el estado del segundo contador es: ' + secondOccurenceCounter[0] + ' para el valor ' + secondOccurenceCounter[1]);
             }
 
             //reiniciamos el flag
@@ -141,4 +158,51 @@ function calcularModa(lista) {
 
     console.log('La moda de la lista es: ' + firstOccurenceCounter[1]);
     console.log('La moda de la lista es: ' + secondOccurenceCounter[1]);
+}
+
+//Calcular la moda con otro enfoque
+function calcularModa(lista) {
+    //vamos a utilizar otro enfoque. Sí que vamos a ordenar la lista. pero creamos un array de 2xn, donde 
+    //n es el número de elementos de la lista, y 2 son las filas, la primera tendra los elementos de la lista, 
+    //y la segunda tendrá el sumatorio de los valores. al final nos quedaremos con el que más tenga
+
+    lista = lista.sort();
+
+    let sumArray = [];
+    //let resultArray = [lista, sumArray];
+
+    let firstElement;
+    let secondElement;
+
+    for (let index = 0; index < lista.length; index++) {
+        
+        if(index == 0) {
+            //primera ejecución del blucle
+            sumArray[index] = 1; 
+        }
+        else{
+            //resto de ejecuciones del bucle
+            firstElement = lista[index];
+            secondElement = lista[index - 1];
+
+            //ya tenemos en first y second elements los valores, ya podemos comparar
+            //si son iguales o distintos
+            //si son iguales, sumamos uno a la cuenta, si no, la empezamos de nuevo
+
+            if(firstElement == secondElement){
+                sumArray[index] = sumArray[index - 1] + 1;
+            }
+            else{
+                sumArray[index] = 1;
+            }
+
+        }
+        
+    }
+
+    //ya tenemos la cuenta hecha, ahora tenemos que enocntrar el índice o los índices donde está
+    //el valor mayor y localizar con ése indice el elmento en la lista original y devovlerlo
+    const max = Math.max(...sumArray);
+    return sumArray.indexOf(max);
+
 }
