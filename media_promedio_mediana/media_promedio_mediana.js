@@ -67,6 +67,8 @@ function calcularModa(lista) {
     let firstOccurenceCounter = 0;
     let secondOccurenceCounter = 0;
 
+    let hasSwitched = false;
+
     //recorremos la lista
     for (let index = 0; index < lista.length; index++) {
         //tenemos que detectar el cambio de valor entre las ocurrencias
@@ -82,15 +84,33 @@ function calcularModa(lista) {
             //el resto de ciclos del bucle se ejecutarán aquí
 
             //comparamos el elemento actual con al enterior, para saber si tenemos que sumar una ocurrencia 
-            //o inicializar algún contador
+            //o inicializar uno de los dos contadores
             if(lista[index] == lista[index - 1]) {
                 //misma ocurrencia, hay que sumar al contador
                 firstOccurenceCounter++;
             }
             else {
                 //tenemos que hacer switch de los contadores y seguir contando
+                //para hacer switch, 
+                hasSwitched = true;
+
                 secondOccurenceCounter++;
             }
+        }
+
+        if(hasSwitched) {
+            //este trozo de código sólo se ejecutará si ha habido un switch en la lectura de la lista
+            //esto es, se ha leído un elemento nuevo
+
+            //tenemos que ver cuál de los dos contadores es el mayor. Si el mayor es el primero. dejamos 
+            //como estaba. si no, intercambiamos (si el segundo es mayor o igual)
+            if(secondOccurenceCounter >= firstOccurenceCounter) {
+                firstOccurenceCounter = secondOccurenceCounter;
+                secondOccurenceCounter = 0;
+            }
+
+            //reiniciamos el flag
+            hasSwitched = false;
         }
     }
 }
