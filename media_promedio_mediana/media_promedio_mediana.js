@@ -208,7 +208,7 @@ function calcularModa(lista) {
 }
 
 function calcularModav2(lista) {
-    const listaCount;
+    const listaCount = null;
     lista.map(
         function(elemento) {
             if(listaCount[elemento]) {
@@ -228,4 +228,20 @@ function calcularModav2(lista) {
 
     const moda = listaArray[listaArray.length - 1];
     return moda;
+}
+
+//La media armónica (designada usualmente mediante H) de una cantidad finita de números es igual al recíproco, 
+//o inverso, de la media aritmética de los recíprocos de dichos valores y es recomendada para promediar velocidades.
+function calcularMediaArmonica(lista) {
+
+    //acumulando el valor del denominador
+    let cummulativeSum = 0;
+
+    let newList = lista.map(
+        function(element) {
+            cummulativeSum += 1/element;
+        }
+    );
+
+    return lista.length/cummulativeSum;
 }
