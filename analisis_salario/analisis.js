@@ -41,7 +41,11 @@ function calcularMediaAritmetica(lista) {
 }
 
 
-//Calcula la mediana de una lista
+/**
+ * Calcula la mediana de una lista
+ * @param {*} lista 
+ * @returns 
+ */
 function calcularMediana(lista) {
     const esNumPar = esPar(lista.length);
     let mediana = 0;
@@ -60,3 +64,17 @@ function calcularMediana(lista) {
 }
 
 console.log('La lista ordenada: ' + calcularMediana(salariosColombiaSorted));
+
+
+//Mediana del top 10 %
+//Sacaremos los elementos de las posiciones que representen el 10% de los datos
+const spliceStart = Math.floor((salariosColombiaSorted.length * 90)/100);
+const spliceCount = salariosColombiaSorted.length - spliceStart;
+
+console.log('SpliceStart ' + spliceStart);
+console.log('SpliceCount ' + spliceCount);
+
+const salariosColombiaTop10 = salariosColombiaSorted.splice(spliceStart, spliceCount);
+
+console.log(calcularMediana(salariosColombiaSorted));
+console.log(calcularMediana(salariosColombiaTop10));
