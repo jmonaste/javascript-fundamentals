@@ -16,11 +16,15 @@ function newFunction(name, age, country) {
 
 /**
  * Con ecmascript6
- * @param {*} name 
- * @param {*} edad 
- * @param {*} country 
+ * @param {*} name nombre para mostrar
+ * @param {*} edad edad para mostrar
+ * @param {*} country país para mostrar
  */
 function newFunction2(name = 'Javier', edad = 30, country = 'Spain') {
     //Aquí la función
     console.log(name, edad, country);
 }
+
+//Cómo podemos llamar a esta función
+newFunction2();
+newFunction2('Ignacio', 29, 'Chile');
