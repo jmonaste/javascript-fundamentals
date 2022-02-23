@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Proyecto Financiero</title>
+</head>
+<body>
+    <main class="container">
+        <section class="heading">
+            <h1>¡Hola Cliente!</h1>
+            <p>¿Cómo ha ido el día?</p>
+        </section>
+        <section class="general-balance" id="general-balance">
+            <h2>Balance general</h2>
+            <div class="account">
+                <div class="account-icon income">
+                    <img src="./assets/dollar.svg" alt="">
+                </div>
+                <!-- CUENTA BBVA -->
+                <p class="account-name">Balance BBVA / HSBC</p>
+                <p class="account-money" id="totalIngresosP"><span>$</span>19,579</p>
+                <a href="#titulo-nuevo-ingreso" class="btn-primary">Nuevo</a>
+            </div>
+            <div class="account">
+                <div class="account-icon expenses">
+                    <img src="./assets/dollar.svg" alt="">
+                </div>
+                <!-- GASTOS -->
+                <p class="account-name">Gastos</p>
+                <p class="account-money" id="totalGastosP"><span>$</span>2,249</p>
+                <a href="#titulo-nuevo-gasto" class="btn-primary">Nuevo</a>
+            </div>
+        </section>
+        <section class="concepts" id="concepts">
+            <h2>Hoy, <span id="day-number"></span> de diciembre</h2>
+        </section>
+        <section class="add-forms" id="add">
+            <div class="form">
+                <h2 id="titulo-nuevo-ingreso">Nuevo Ingreso</h2>
+                <div class="account-icon income">
+                    <img src="./assets/dollar.svg" alt="">
+                </div>
+                <div class="form-container">
+                    <!-- FORMULARIO INGRESOS -->
+                    <h3>BBVA / HSBC</h3>
+                    <form action="" id="formularioIngresos">
+                        <label for="cantidad" >¿Cuánto has ganado?</label>
+                        <span class="currencyinput">$
+                         <input type="number" id="cantidad-ganada">
+                        </span>
+                        <label for="concepto" >Concepto</label>
+                        <input type="text" id="concepto-ganada" class="currencyinput">
+                        <button type="button" class="btn-primary" onclick="sumarIngresos()">Añadir</button>
+                    </form>
+                </div>
+            </div>
+            <div class="form">
+                <!-- FORMULARIOS GASTOS -->
+                <h2 id="titulo-nuevo-gasto">Nuevo Gasto</h2>
+                <div class="account-icon expenses">
+                    <img src="./assets/dollar.svg" alt="">
+                </div>
+                <div class="form-container">
+                    <h3>Gastos</h3>
+                    <form action="" id="formularioGastos">
+                        <label for="cantidad" >¿Cuánto ha sido el gasto?</label>
+                        <span class="currencyinput">$
+                            <input type="number" id="cantidad-gastada">
+                           </span>
+                        <label for="concepto" >Concepto</label>
+                        
+                        <input type="text" id="concepto-gastado" class="currencyinput">
+                        <button type="button" class="btn-primary" onclick="sumarGastos()">Añadir</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <a href="#concepts"><img src="./assets/ep_menu.svg" alt=""></a>
+            <a href="#add"><img src="./assets/akar-icons_plus.svg" alt=""></a>
+            <a href="#general-balance"><img src="./assets/icons8_bank-card.svg" alt=""></a>
+        </footer>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
