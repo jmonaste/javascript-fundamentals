@@ -60,3 +60,26 @@ puedo tener multilinea sin necesidad del barra n`;
 
 console.log(lorem);
 console.log(lorem2);
+
+//destructuración de objetos
+let person = {
+    'name':'Javier',
+    'age':30,
+    'country':'spain'
+}
+
+console.log(person.name, person.age, person.country);
+
+//destructuración - extraemos los elementos que necesitamos
+let {name, age, country} = person;
+console.log(name, age, country);
+
+//también podemos traer sólo un elementos
+let person_2 = {
+    'name_2':'Ignacio',
+    'age':30,
+    'country':'spain'
+}
+
+let {name_2} = person_2;
+console.log(name);
