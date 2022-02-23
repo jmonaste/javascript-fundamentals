@@ -82,4 +82,14 @@ let person_2 = {
 }
 
 let {name_2} = person_2;
-console.log(name);
+console.log(name_2);
+
+//operador de propagación - expandir varios elementos
+let team1 = ['Oscar', 'Julián', 'Ricardo'];
+let team2 = ['Ana', 'Juana', 'Verónica'];
+
+let education = ['Davi', ...team1, ...team2];
+
+console.log(education);
+
+//con let, el scope es de la función o bloque
