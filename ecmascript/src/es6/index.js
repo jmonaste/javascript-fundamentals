@@ -28,3 +28,35 @@ function newFunction2(name = 'Javier', edad = 30, country = 'Spain') {
 //Cómo podemos llamar a esta función
 newFunction2();
 newFunction2('Ignacio', 29, 'Chile');
+
+
+//Template literals. Permite separar o unir varios elementos
+
+let hello = 'Hello';
+let world = 'World';
+
+//ejemplo en ecmascript6
+let epicPhrase = hello + ' ' + world;
+console.log(epicPhrase);
+
+//los templates nos van a permitir hacer esto mismo sin usar el '+' que es un poco tedioso
+let epicPhrase2 = `${hello} ${world}`;
+console.log(epicPhrase2);
+
+
+
+
+//Multilínea en los string
+
+//esto se hacía antes de es6
+//normalmente no es la mejor opcion
+let lorem = 'lorem ipsum, lorem ipsum. quiero escribir una frase épica \n'
++ ' concatenamos esta linea para continuar en nueva línea en el editor';
+
+//ecmascript6 tambine puede hacerlo con comillas francesas o template literasl
+let lorem2 = `otra frease grande y larga que necesitamos
+ahora es otra frase grande y larga, que por estar entre las comillas francesas
+puedo tener multilinea sin necesidad del barra n`;
+
+console.log(lorem);
+console.log(lorem2);
