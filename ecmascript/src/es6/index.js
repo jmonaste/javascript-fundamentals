@@ -235,3 +235,30 @@ hello();
 
 
 
+
+
+
+
+
+//generators. es una funcion especial que retorna una serie de valores en función de lo definido
+//es una funcion especial, llevan un asterisco para designar que son generators
+
+//segunf el  algoritmo es como devovlerá los valores
+//el yield me permite retornar algo, que en este ejemplo es un string. el yield guarda tambine
+//el estado de forma interna
+
+function* helloWorld() {
+    if(true) {
+        yield 'Hello, ';
+    }
+    if(true) {
+        yield 'World!';
+    }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+//importante. casos de generators sería por ejemplo el fibonacci
