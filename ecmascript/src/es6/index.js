@@ -136,4 +136,58 @@ let listOfNames = names.map(
 );
 
 //las arrow functions son funciones anónimas
-let listOfNames2 = names.map(item => console.log(item.name));
+let listOfNames2 = names.map(item => console.log(item.name)); //pasamos funcion anónima para imprimir los nombres
+
+let listOfNames3 = (name, age, country) => {
+    //código para list of names 3
+}
+
+//si solo pasamos un elemento
+const listOfName4 = name => {
+    //código a ejecutar
+}
+
+const square = num => num + num; //asignamos directamente, simplifica código
+
+//Promesas
+//simplifican los antiguos callbacks, para manejar los sincornismos
+//las promesas entienden que algo va a pasar
+
+const helloPromise = () =>{
+    return new Promise((resolve, reject) => {
+        if(true) {
+            resolve('Hey!');
+        }
+        else{
+            reject('Ups!!');
+        }
+    });
+}
+
+//result o reject, o resuelve o rechaza
+
+helloPromise()
+.then(response => console.log(response))
+.then(() => console.log('Hola'))
+.catch(error => console.log('Error'));
+
+
+
+const helloPromise2 = () =>{
+    return new Promise((resolve, reject) => {
+        if(false) {
+            resolve('Hey!');
+        }
+        else{
+            reject('Ups!!');
+        }
+    });
+}
+
+//result o reject, o resuelve o rechaza
+
+helloPromise2()
+.then(response => console.log(response))
+.catch(error => console.log('Error'));
+
+//util para hacer llamadas a un API --> se profundizará en el curso de sincronismo
