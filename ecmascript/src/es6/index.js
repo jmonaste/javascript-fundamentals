@@ -191,3 +191,28 @@ helloPromise2()
 .catch(error => console.log('Error'));
 
 //util para hacer llamadas a un API --> se profundizará en el curso de sincronismo
+
+//clases módulos y generadores
+
+
+//clase con constructor el cual está asignando dentro del scope glboal estas dos variables, 
+//tenemos un metodo al cual le pasamos losdos valores que queremos pasar
+//hacemos la suma retirnando el valor 
+
+class calculator{
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sumar(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log(calc.sumar(2,2));
+
