@@ -216,3 +216,22 @@ class calculator{
 const calc = new calculator();
 console.log(calc.sumar(2,2));
 
+//Módulos - import/export
+//vamos a simular crear un modulo
+
+
+/**
+ * import { hello } from './module' 
+ */
+
+//fomra antigua por si la nueva no funciona (versiones antiguas de node no lo soportan)
+const hello = require('./module')
+
+hello();
+
+//así podemos separar en módulos los elementos que sean necesarios. esto significa que podemos
+//separar la logica, para un calculo matematico, llamada a un api, llamarlos segun el caso
+//desde el docuemnto principal. es la forma en la que se trabaja con lo smódulos
+
+
+
