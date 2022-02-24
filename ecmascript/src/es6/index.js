@@ -92,4 +92,15 @@ let education = ['Davi', ...team1, ...team2];
 
 console.log(education);
 
-//con let, el scope es de la función o bloque
+//con let, el scope es de la función o bloque, vemos algunos ejemplos
+
+{
+    var global = 'Global var';
+}
+
+{
+    let globalLet = 'GlobalLet';
+}
+
+console.log(global);
+console.log(globalLet); //va a dar un error por no estar definido. globallet esta en otro scope
