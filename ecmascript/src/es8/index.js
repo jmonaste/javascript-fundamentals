@@ -38,3 +38,20 @@ console.log('cofees'.padEnd(12,'---------'));
 console.log('bee'.padEnd(12,'---------'));
 console.log('a'.padEnd(12,'---------'));
 console.log('nowhere'.padEnd(12,'---------'));
+
+
+/**
+ * trailing commas
+ * --podemos meter comas al final de los objetos, mas simple para nosotros empezar a añadir mas elementos
+ * sin caer en el error comun
+ */
+
+ const dataExample = {
+    frontend: 'Javier',
+    backend: 'Isabel',
+    designer: 'Ana',
+};
+
+//como pasamos este objeto a matriz?
+const entries = Object.entries(dataExample);
+console.log(entries);
