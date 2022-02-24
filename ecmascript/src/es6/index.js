@@ -120,3 +120,20 @@ obj = {name: name, age: age};
 obj2 = {name, age}; //asigna llave y valor, caracteristica de ecmascript6
 console.log(obj);
 console.log(obj2);
+
+
+//arrow funcitons
+const names = [
+    {name: 'Javier', age: 30},
+    {name: 'Ignacio', age: 27}
+];
+
+//lo que hacíamos era pasar una funcion anónima
+let listOfNames = names.map(
+    function(item) {
+        console.log(item.name);
+    }
+);
+
+//las arrow functions son funciones anónimas
+let listOfNames2 = names.map(item => console.log(item.name));
