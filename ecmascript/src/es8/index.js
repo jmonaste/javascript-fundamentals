@@ -13,3 +13,6 @@ const data = {
 const entries = Object.entries(data);
 console.log(entries);
 
+//¿cuñantos elementos tiene el array?
+
+console.log(entries.length);
