@@ -262,3 +262,7 @@ console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 
 //importante. casos de generators sería por ejemplo el fibonacci
+
+
+
+
