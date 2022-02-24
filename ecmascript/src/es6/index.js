@@ -105,8 +105,18 @@ console.log(education);
 console.log(global);
 console.log(globalLet); //va a dar un error por no estar definido. globallet esta en otro scope
 
-//caracteristica de ecmascript6 es const
+//otra caracteristica de ecmascript6 es const
 const variableA = 'b'; //contsnate que no cambia su valor
 console.log(variableA);
 variableA = 'a'; //va a dar error porque es una constante, no me permite modificar el valor
 console.log(variableA);
+
+
+//arrows funcitons, promesas y parámetros en objetos
+
+let name = 'Javier';
+let age = 30;
+obj = {name: name, age: age};
+obj2 = {name, age}; //asigna llave y valor, caracteristica de ecmascript6
+console.log(obj);
+console.log(obj2);
