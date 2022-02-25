@@ -89,3 +89,16 @@ const hellowAsync = async () => {
 
 //hará el llamado, va a epserar a que esto suceda y luego lo podremos imprimir en consola
 hellowAsync();
+
+
+//otro ejemplo
+const anotherFunction = async() => {
+    try {
+        const hello = await helloWorld();
+        console.log(hello);
+    } catch (error) {
+        console.log(error)
+    }
+};
+
+anotherFunction();
