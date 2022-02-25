@@ -31,3 +31,12 @@ console.log(array.flat(2));
  let helloWorld = '                hello World';
  console.log(helloWorld);
  console.log(helloWorld.trimStart());
+
+  /**
+  * trimsend()
+  * elimina espacios en blancos de un string
+  */
+
+   let helloWorld = 'hello World                ';
+   console.log(helloWorld);
+   console.log(helloWorld.trimEnd());
