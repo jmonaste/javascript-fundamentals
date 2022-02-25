@@ -52,3 +52,23 @@ Promise.allSettled([promise1, promise2, promise3])
 
 console.log(window);
 console.log(globalThis);
+
+//Nuevo operador lógico: null operator
+
+const fooo = null ?? 'default string';
+console.log(fooo);
+
+const fooo2 = 'not null' ?? 'default string';
+console.log(fooo2)
+
+
+//Optional chaining
+
+const user = {};
+console.log(user?.profile?.email);
+
+if(user?.profile?.email) {
+    console.log('email')
+} else{
+    console.log('fail')
+}
