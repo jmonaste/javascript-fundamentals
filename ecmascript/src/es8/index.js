@@ -55,3 +55,37 @@ console.log('nowhere'.padEnd(12,'---------'));
 //como pasamos este objeto a matriz?
 const entries = Object.entries(dataExample);
 console.log(entries);
+
+
+/**
+ * Async y await
+ * Crearemos un función, luego
+ * Haremos una promesa, y vamos a invocarlas
+ * veremos cómo nos ayudan las promesas, junto con el async y el await, 
+ * para entender esta nueva caracteristica de es8
+ */
+
+const helloWorld = () => {
+    return new Promise((resolve, reject) => {
+        (true)
+        ? setTimeout(() => resolve('Hello World!'), 3000)
+        : reject(new Error('Test error...'))
+    })
+}
+
+/**
+ * ya tenemos nuestra promesa con la que vamos a trabajasr nuestro async y await 
+ * esas funciones que le agregan este valor para identificar que se va a comportar
+ * de fomra disinta
+ * nos permite ser mas claros en la construccion de esta forma
+ * y trabajremos mejor con el asincronismo
+ * vamos a ver cómo funciona y cual es la logica que implica usarla
+ */
+
+const hellowAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);
+}
+
+//hará el llamado, va a epserar a que esto suceda y luego lo podremos imprimir en consola
+hellowAsync();
