@@ -63,3 +63,16 @@ try {
 } catch {
      error //lo tenemos disponble ya sin necesidad de especificar antes
 }
+
+
+/**
+ * Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un 
+ * objeto en una matriz clave/valor con Object.entries(), y hace lo inverso es decir de 
+ * una matriz clave/valor a un objeto con Object.fromEntries().
+ */
+
+let entries = [['Name', 'Javier'], ['Age', 23]];
+console.log(Object.fromEntries(entries)); //nos devuelve un objetto construido con la clave valor
+
+//de arreglo a objeto o de objeto a arreglos
+
