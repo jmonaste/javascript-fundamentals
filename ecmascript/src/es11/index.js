@@ -21,3 +21,16 @@ btn.addEventListener('click', async function () {
  * nos permite dividir el codigo y usarlo sólo cuanod lo necesitamos
  * dinamy imports, mejora el performance de la aplicación
  */
+
+
+
+//Big INT: permite trabajar con numeros mayores a 2^53
+
+// 1- Añadiendo una "n" al final activas el big int en el valor
+const aBigNumber = 9007199254740991n;
+
+// 2- Con el metodo BigInt activas el valor
+const anotherBigNumber = BigInt(9007199254740991);
+
+console.log(aBigNumber);
+console.log(anotherBigNumber);
