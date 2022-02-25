@@ -49,3 +49,17 @@ class AnyClass {
         this.ref = new WeakRef(element)
     }
 }
+
+//Nuevos operadores lógicos
+
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue &&= isFalse);
+
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue ||= isFalse);
+
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue ??= isFalse);
