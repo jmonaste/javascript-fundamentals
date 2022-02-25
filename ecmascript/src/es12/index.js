@@ -39,3 +39,13 @@ const promise3 = new Promise((resolve, reject) => resolve("3"));
 
 Promise.any([promise1, promise2, promise3])
     .then(response => console.log(response));
+
+
+// WeakRef(element);
+//evitamos que el objeto sea tratado por el garbage collector
+//garantizamos que esto sea así
+class AnyClass {
+    constructor(element){
+        this.ref = new WeakRef(element)
+    }
+}
