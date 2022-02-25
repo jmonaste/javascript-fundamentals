@@ -40,3 +40,26 @@ console.log(array.flat(2));
    let helloWorld = 'hello World                ';
    console.log(helloWorld);
    console.log(helloWorld.trimEnd());
+
+
+   /**
+    * optional catch binding
+    * podemos pasar de forma opcional el parametro de error al cath
+    * --
+    * try/catch: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) 
+    * sino directamente usarlo en el scope del catch.
+    */
+
+   //antes
+   try {
+
+   } catch (error) {
+        error
+   }
+
+//antes
+try {
+
+} catch {
+     error //lo tenemos disponble ya sin necesidad de especificar antes
+}
