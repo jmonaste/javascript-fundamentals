@@ -76,3 +76,10 @@ console.log(Object.fromEntries(entries)); //nos devuelve un objetto construido c
 
 //de arreglo a objeto o de objeto a arreglos
 
+/**
+ * Symbol.prototype.description: permite regresar el descripcion opcional del Symbol
+ */
+
+let mySymbol = `My Symbol`;
+let symbol = Symbol(mySymbol);
+console.log(symbol.description);
