@@ -15,3 +15,17 @@ const replacedString2 = string.replaceAll("JavaScript", "Python");
 console.log(replacedString2);
 
 // Output: Python es maravilloso, con Python puedo crear el futuro de la web.
+
+
+
+
+
+// Metodos privados
+class Message {
+    #show(val){ // Con el # convertimos al método en privado
+        console.log(val);
+    };
+};
+
+const message = new Message();
+message.show('Hola!');
