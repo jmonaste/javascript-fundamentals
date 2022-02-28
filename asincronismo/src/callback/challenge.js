@@ -15,6 +15,8 @@ let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
  * del api.
  */
 
+let API = 'https://rickandmortyapi.com/api/character/'
+
 function fetchData(url_api, callback) {
     let xhttp = new XMLHttpRequest();
 
@@ -36,3 +38,23 @@ function fetchData(url_api, callback) {
 }
 
 //ya tenemos la funcion para la llamada al API, ahora resta utilizarla
+
+fetchData(API, function(error1, data1) { //numeros porque vamos a usarla varias veces de forma anidada
+    if (error1) return console.error(error1); //en caso de error, finalizamos la funcion
+    fetchData(API + data1.results[0].id, function(error2, data2) {
+        if(error2) return console.error(error2);
+        fetchData(data2.origin.url, function(error3, data3) {
+            if(error3) return console.error(error3);
+            console.log(data1.info.count);
+            console.log(data2.name);
+            console.log(data3.dimension);
+        });
+    })
+})
+
+//con los callbacks hemos hecho una llamada tras una llamada
+//podemos encadenar callbacks, se llama callbackhell en el argot.
+//son muchas mismas peticiones encadenas. genera el llamado callback-hell
+//es una mala práctica
+
+//debemos evitar caer en este detalle de hacer llamadas encadenadas.
