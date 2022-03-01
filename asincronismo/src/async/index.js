@@ -22,3 +22,19 @@ const doSomething = async () => {
 console.log('Before');
 doSomething();
 console.log('After');
+
+
+
+//más
+
+const anotherFunction = async () => {
+    try {
+        const something = await doSomethingAsync();
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+console.log('Before1');
+anotherFunction();
+console.log('After1');
