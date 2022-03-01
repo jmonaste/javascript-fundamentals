@@ -17,3 +17,26 @@ const somethingWillHappen = () => {
 somethingWillHappen()
 .then(response => console.log(response))
 .catch(err => console.error(err));
+
+
+//nuevo ejemplo
+
+const somethingWillHappen2 = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            //otro ejemplo
+            setTimeout(() => {
+                resolve('True');
+            }, 3000)
+        } else {
+            const error = new Error('Ups!');
+            reject(error);
+
+        }
+    });
+}
+
+somethingWillHappen2()
+.then(response => console.log(response))
+.then(() => console.log('Ejemplo de encadenamiento'))
+.catch(err => console.error(err));
