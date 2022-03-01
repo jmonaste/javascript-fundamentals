@@ -5,7 +5,7 @@
 
 const somethingWillHappen = () => {
     return new Promise((resolve, reject) => {
-        if (false) {
+        if (true) {
             resolve('Hey!');
         } else {
             reject('Ups!');
@@ -41,5 +41,13 @@ somethingWillHappen2()
 .then(() => console.log('Ejemplo de encadenamiento'))
 .catch(err => console.error(err));
 
-//otro ejemplo, para demostrar que podemos encadenar más casos
+//con promise.all podemos ejecutar las dos promesas y obtener un array con los resultados
+
+Promise.all([somethingWillHappen(), somethingWillHappen2()])
+.then(response => {
+    console.log('Array of results ', response);
+})
+.catch(err => {
+    console.error(err)
+})
 
