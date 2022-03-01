@@ -40,3 +40,6 @@ somethingWillHappen2()
 .then(response => console.log(response))
 .then(() => console.log('Ejemplo de encadenamiento'))
 .catch(err => console.error(err));
+
+//otro ejemplo, para demostrar que podemos encadenar más casos
+
