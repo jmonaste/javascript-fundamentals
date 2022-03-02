@@ -16,12 +16,13 @@ function marvelPrinter(marvelObject) {
  * @param {*} marvelObject 
  */
  function marvelCharacterPrinter(marvelObject) {
-  const listOfCharacters = marvelObject.map(
+  data = marvelObject.data.results;
+  const listOfCharacters = data.map(
     function(item) {
-        console.log(item);
+        console.log(item.name);
     }
   );
 }
 
 module.exports = marvelPrinter;
-module.exports = marvelCharacterPrinter;
+//module.exports = marvelCharacterPrinter;

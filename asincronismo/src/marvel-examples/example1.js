@@ -67,7 +67,7 @@
 
 const fetchDataMarvel = require('../utils/fetchDataMarvel');
 const marvelPrinter = require('../utils/printers');
-const marvelCharacterPrinter = require('../utils/printers');
+//const marvelCharacterPrinter = require('../utils/printers');
 
 const API = 'http://gateway.marvel.com/v1/public/comics';
 
@@ -75,7 +75,17 @@ const API = 'http://gateway.marvel.com/v1/public/comics';
 const getCharacters = async (url_api) => {
     try {
         const data = await fetchDataMarvel(url_api);
-        console.log(data);
+        console.log('Imprimimos los datos de los characteres...')
+        //console.log(data.data.results);
+
+        //imprimimos los nombres
+        const listOfCharacters = data.data.results.map(
+            function(item) {
+                console.log(item.name);
+            }
+          );
+
+        
     } catch (error){
         console.error(error);
     }
