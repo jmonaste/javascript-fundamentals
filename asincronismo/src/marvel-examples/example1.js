@@ -59,3 +59,30 @@
  * 
  * Dentro de esta lista de recursos, elegiremos el primero -> Comics
  */
+
+/**
+ * Primer reto: vamos a imprimir todos los nombres de los comics que me devuelve el API
+ */
+
+
+const fetchDataMarvel = require('../utils/fetchDataMarvel');
+const API = 'http://gateway.marvel.com/v1/public/comics';
+
+const getAllComicsNames = async (url_api) => {
+    try {
+        const data = await fetchDataMarvel(url_api);
+        //const character = await fetchDataMarvel(`${API}${data.results[0].id}`);
+        //const origin = await fetchDataMarvel(character.origin.url);
+
+        console.log(data);
+        //console.log(character.name);
+        //console.log(origin.dimension);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+console.log('Before');
+getAllComicsNames(API);
+console.log('After');
