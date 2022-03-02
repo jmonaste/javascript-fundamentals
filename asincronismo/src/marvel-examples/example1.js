@@ -37,4 +37,25 @@
  * http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150 (the hash value is the md5 digest of 1abcd1234)
  * 
  * Ya tenemos acceso al API con nuestra clave pública (postman)
+ * 
+ * Para más información sobre métodos de autenticación -> https://learning.postman.com/docs/sending-requests/authorization/
+ * 
+ */
+
+
+/**
+ * Lo siguiente es elegir el recurso con el que vamos a trabajar:
+ * 
+ * Resources
+ * You can access six resource types using the API:
+ * 
+ * Comics: individual print and digital comic issues, collections and graphic novels. For example: Amazing Fantasy #15.
+ * Comic series: sequentially numbered (well, mostly sequentially numbered) groups comics with the same title. For example, Uncanny X-Men.
+ * Comic stories: indivisible, reusable components of comics. For example, the cover from Amazing Fantasy #15 or the origin of Spider-Man story from that comic.
+ * Comic events and crossovers: big, universe-altering storylines. For example, Infinity
+ * Creators: women, men and organizations who create comics. For example, Jack Kirby.
+ * Characters: the women, men, organizations, alien species, deities, animals, non-corporeal entities, trans-dimensional manifestations, abstract personifications, 
+ * and green amorphous blobs which occupy the Marvel Universe (and various alternate universes, timelines and altered realities therein). For example, Spider-Man.
+ * 
+ * Dentro de esta lista de recursos, elegiremos el primero -> Comics
  */
