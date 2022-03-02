@@ -66,7 +66,20 @@
 
 
 const fetchDataMarvel = require('../utils/fetchDataMarvel');
+const marvelPrinter = require('../utils/printers');
+const marvelCharacterPrinter = require('../utils/printers');
+
 const API = 'http://gateway.marvel.com/v1/public/comics';
+
+
+const getCharacters = async (url_api) => {
+    try {
+        const data = await fetchDataMarvel(url_api);
+        console.log(data);
+    } catch (error){
+        console.error(error);
+    }
+}
 
 const getAllComicsNames = async (url_api) => {
     try {
@@ -74,14 +87,35 @@ const getAllComicsNames = async (url_api) => {
         //const character = await fetchDataMarvel(`${API}${data.results[0].id}`);
         //const origin = await fetchDataMarvel(character.origin.url);
 
-        console.log(data);
+        //console.log(data.data.results);
         //console.log(character.name);
         //console.log(origin.dimension);
+
+        //intentamos imprimir
+        marvelPrinter(data.data.results);
+
+        //si queremos más datos a partir de algun endpoint dentro de la respuesta:
+        const listOfCharacters = data.data.results.map(
+            function(item) {
+                getCharacters(item.characters.collectionURI);
+            }
+          );
+
+        //const charactersData = await fetchDataMarvel(characters.collectionURI);
+        //console.log(charactersData);
+
+
 
     } catch (error) {
         console.error(error);
     }
 }
+
+
+
+
+
+
 
 console.log('Before');
 getAllComicsNames(API);
