@@ -12,5 +12,8 @@
     "package"
   ],
   "author": "Javier Ignacio Monasterio Solar <javiermonasterio@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }
