@@ -1,0 +1,12 @@
+//estandar de la industria
+//vamos a crear un objeto donde añadimos las configuraciones, como presets para trabajar con js moderno
+//y los plugisn que usa babel
+
+{
+    "presets":[
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+}
