@@ -1,0 +1,22 @@
+{
+  "name": "random-messages-monasterio",
+  "version": "1.0.0",
+  "description": "random messages",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "messages",
+    "javascript",
+    "node",
+    "npm"
+  ],
+  "author": "Javier Monasterio <javiermonasterio@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "random-msg-monasterio": "./bin/global.js"
+  },
+  "preferGlobal": true
+}
